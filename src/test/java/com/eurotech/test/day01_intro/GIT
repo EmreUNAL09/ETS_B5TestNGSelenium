@@ -1,0 +1,10 @@
+
+
+
+Git' tanımlama yapmadan önce yukarıda VCS 'ye tıklanır
+VCS ==> create git repostory ==> OK  (Böylece projemizi gite tanımlamış olururuz.)
+Idea (sağ tıka) ==> Git ==> add to gitignore ==> create add
+Commit ==> dosya sec ==> commit and push
+
+Projeyi GitHub'a gönderme:
+    Git(yukarda) ==> GitHub ==> share project on GitHub
