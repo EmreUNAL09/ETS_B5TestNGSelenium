@@ -1,0 +1,8 @@
+
+
+TestNG(New Generation) bir unit test platformudur.
+
+    Assert.assertEquals("title","title")
+    Assert.assertNotEquals
+    Assert.assertTrue
+    Assert.assertFalse

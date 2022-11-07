@@ -17,7 +17,7 @@ public class TestNGAnnotationsDemo {
 
     @Test
     public void test3(){
-        String expected = "curo";
+        String expected = "Curo";
         String actual = "Eurotech";
 
         Assert.assertTrue(actual.startsWith(expected));
@@ -38,6 +38,23 @@ public class TestNGAnnotationsDemo {
 
 
         Assert.assertTrue(email.contains("@"));
+    }
+    @Test
+    public void test5(){
+        Assert.assertFalse(0<1, "Verify that 0 is not greater than 1");
+        //bizim burda beklediğimiz hata vermesi, fakat 0<1 olduğundan, yani doğru olduğundan
+        // burda hata olur test kalır.
+    }
+
+    @Test
+    public void test6(){
+        Assert.assertNotEquals("two","one");
+        //bizim burda beklediğimiz hata vermesi, iki taraf farklı olduğundan, yani yanlış olduğundan
+        // burda test geçer
+
+        // expected: False
+        // actual: False
+        // test: PASS
     }
 
     @Test
