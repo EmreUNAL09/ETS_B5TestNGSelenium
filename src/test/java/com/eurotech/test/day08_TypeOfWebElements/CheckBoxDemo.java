@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class CheckBoxDemo {
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("https://demoqa.com/automation-practice-form");
 
@@ -26,7 +26,16 @@ public class CheckBoxDemo {
         Assert.assertFalse(music.isSelected());  //assert: false,  condition: false,  test:PASS
 
 
+        WebElement sportsCheckBox = driver.findElement(By.cssSelector("label[for='hobbies-checkbox-1']"));
+
+        Thread.sleep(2000);
+        sportsCheckBox.click();
+        Thread.sleep(2000);
+
+        Assert.assertTrue(sportsCheckBox.isSelected(),"verify that sports is selected");
+
         driver.close();
+
     }
 
     @Test
@@ -56,11 +65,4 @@ public class CheckBoxDemo {
 
     }
 
-    @Test
-    public void task1(){
-        //Class Task
-        //complete the task
-        //click all the checkbox //hepsini tıkladıktan sonra assert edilecek!
-        //than assert that is selected or not
-    }
 }

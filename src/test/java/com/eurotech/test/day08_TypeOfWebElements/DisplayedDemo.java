@@ -32,17 +32,4 @@ public class DisplayedDemo {
         driver.close();
     }
 
-    @Test
-    public void task2(){
-        //https://the-internet.herokuapp.com/dynamic_loading
-
-        //Homework
-
-        //Example 2: Element rendered after the fact -->click
-        //click that element
-        //verify that hello world is not displayed
-        //click start button
-        //verify that hello element is displayed
-        //and verify that "Hello World!" text is present
-    }
 }
