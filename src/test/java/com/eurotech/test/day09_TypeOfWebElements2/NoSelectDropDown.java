@@ -17,7 +17,7 @@ public class NoSelectDropDown {
     @BeforeMethod
     public void setUp() {
         driver = WebDriverFactory.getDriver("chrome");
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
     }
 
@@ -41,6 +41,16 @@ public class NoSelectDropDown {
         System.out.println("papayaList.size() = " + papayaList.size());
 
         Assert.assertEquals(papayaList.size(),5); // --> short way
+
+        for (WebElement papaya : papayaList) {
+            System.out.println("papaya.getText() = " + papaya.getText());
+        }
+
+        Assert.assertEquals(papayaList.get(3).getText(),"Nuts");
+
+        papayaList.get(2).click();
+
+        Thread.sleep(1000);
     }
 
     @AfterMethod

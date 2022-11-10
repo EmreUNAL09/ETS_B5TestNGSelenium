@@ -21,7 +21,6 @@ public class SelectDropDownTest {
     public void setUp() {
         driver = WebDriverFactory.getDriver("chrome");
         //driver.manage().window().maximize();
-
     }
 
     @Test
@@ -32,7 +31,7 @@ public class SelectDropDownTest {
         //which has "select" tag name
         WebElement colorDropDown = driver.findElement(By.cssSelector("#oldSelectMenu"));
 
-        //2 create select object by passing that elements as a constructor
+        //2 create 'Select' object by passing that elements as a constructor
         Select color = new Select(colorDropDown);
 
         //3 getOptions() --> return all available options from the dropdown
@@ -58,7 +57,6 @@ public class SelectDropDownTest {
         //1.Select using visible text -> selectByVisibleText("")
         Thread.sleep(2000);
         color.selectByVisibleText("Yellow");
-
         expectedColor = "Yellow";
         actualColor = color.getFirstSelectedOption().getText();   //Yellow birinci sıraya geçtiği için bu şekilde kontrol edebiliriz.
         System.out.println("actualColor = " + actualColor);
