@@ -45,6 +45,7 @@ public class MultipleWindows {
         System.out.println("currentTab = " + currentTab);
 
         Set<String> windowHandles = driver.getWindowHandles();
+        // Set'ler uniqu objeler kabul eder. bu yüzden burda Set'i kullanıyoruz.
         // first and most important thing HasSet is a
         // collection of an items where every item is unique!
 

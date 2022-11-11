@@ -63,7 +63,7 @@ public class IframeTest {
     public void nestedIframe(){
         driver.get("https://the-internet.herokuapp.com/nested_frames");
 
-        //switch to middle frame and get
+        //switch to middle frame and get text
         driver.switchTo().frame("frame-top");
 
         driver.switchTo().frame("frame-middle");
@@ -77,8 +77,25 @@ public class IframeTest {
         driver.switchTo().frame(2);
         System.out.println("driver.findElement(By.tagName(\"body\")).getText() = " + driver.findElement(By.tagName("body")).getText());
 
+
         //go to bottom frame and get text
+        driver.switchTo().defaultContent();
+            /*driver.switchTo().parentFrame();
+              driver.switchTo().parentFrame();*/
+        /*1. yöntem ==> WebElement frameBottom = driver.findElement(By.xpath("//frame[@name='frame-bottom']"));
+        driver.switchTo().frame(frameBottom);*/
+
+        /*2. yöntem name veya ID ile ==> driver.switchTo().frame("frame-bottom"); */
+        driver.switchTo().frame(1); //3.  yöntem
+        System.out.println("driver.findElement(By.xpath(\"/html/body\")).getText() = " + driver.findElement(By.xpath("/html/body")).getText());
+
+
 
         //go to left frame and get text
+        driver.switchTo().parentFrame();  //tekrar parenta çıkmamız gerekiyor
+        driver.switchTo().frame("frame-top");
+        driver.switchTo().frame("frame-left");
+        System.out.println("driver.findElement(By.tagName(\"body\")).getText() = " + driver.findElement(By.tagName("body")).getText());
+
     }
 }
