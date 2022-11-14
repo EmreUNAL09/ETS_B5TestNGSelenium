@@ -1,0 +1,8 @@
+Hello World!
+
+Eurotech B5 is here
+
+C:\Users\Asus\IdeaProjects\ETS_B5TestNGSelenium/src/test/resources/EurotechB5.txt
+
+
+
