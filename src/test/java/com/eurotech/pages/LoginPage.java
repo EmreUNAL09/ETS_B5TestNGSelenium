@@ -11,11 +11,58 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
-    public LoginPage(){
-        PageFactory.initElements(Driver.get(),this);
+
+    @FindBy(id = "loginpage-input-email")
+    public WebElement userNameInput_loc;
+
+    @FindBy(name = "password")
+    public WebElement passwordInput_loc;
+
+    @FindBy(xpath = "//input[@type='submit']")
+    public WebElement loginBtn_loc;
+
+    @FindBy(xpath = "//*[.='Invalid Credentials!']")
+    public WebElement warningMessage_loc;
+
+    @FindBy(css = ".menu-list")
+    public List<WebElement> menuList_loc;
+
+
+
+
+
+
+
+
+    public void login_Method(String userName, String password){
+        userNameInput_loc.sendKeys(userName);
+        passwordInput_loc.sendKeys(password);
+        loginBtn_loc.click();
     }
+
+    public void loginAsTeacher_Mtd(){
+        String userName = ConfigurationReader.get("usernameTeacher");
+        String password = ConfigurationReader.get("passwordTeacher");
+
+        userNameInput_loc.sendKeys(userName);
+        passwordInput_loc.sendKeys(password);
+        understandBtn_Loc.click();
+        loginBtn_loc.click();
+    }
+
+    public void loginAsStudent_Mtd(){
+        userNameInput_loc.sendKeys(ConfigurationReader.get("usernameStudent"));
+        passwordInput_loc.sendKeys(ConfigurationReader.get("passwordStudent"));
+        loginBtn_loc.click();
+    }
+
+
+
+    /*
+    These are change with devEX website
+     */
 
     @FindBy(id = "user-name")
     public WebElement usernameInput;
@@ -73,4 +120,7 @@ public class LoginPage {
         loginBtn.click();
     }
 
+    /*
+    These are change with devEX website
+     */
 }
