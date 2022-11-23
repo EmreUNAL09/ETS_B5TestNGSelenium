@@ -24,13 +24,22 @@ public class DashboardPage extends BasePage{
     @FindBy(css = ".nav__menu-item")
     public List<WebElement> menuList_loc;
 
+    //if I need --> create a new Class named PostPage and write the web element
+    @FindBy(css = "#post-form-btn")
+    public WebElement submitBtn_loc;
+
     public void navigateToMenu(String menuName){
         Driver.get().findElement(By.xpath("//*[text()='"+menuName+"']")).click();
 
+    }
 
+    public void navigateToSubMenu(String subMenu){
+        Driver.get(). findElement(By.xpath("//span[text()='"+subMenu+"']")).click();
+    }
 
-
-
+    public void navigateToMenu2(String tab, String module){
+        Driver.get().findElement(By.xpath("//*[text()='"+tab+"']")).click();
+        Driver.get().findElement(By.xpath("//span[text()='"+module+"']")).click();
     }
 
 

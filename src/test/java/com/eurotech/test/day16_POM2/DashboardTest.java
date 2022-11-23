@@ -60,17 +60,17 @@ public class DashboardTest extends TestBase {
          Navigate to Developers menu and verify url is http://eurotech.study/profiles
          */
 
-        driver.get(ConfigurationReader.get("urlIP"));
+        driver.get(ConfigurationReader.get("url"));
         loginPage.loginAsTeacher_Mtd();
         String expectedText="Welcome Teacher";
         Assert.assertEquals(dashboardPage.welcomeMessage_loc.getText(),expectedText,
                 "Verify that log in successfully");
 
         dashboardPage.allPosts_loc.click();
-        Assert.assertEquals(driver.getCurrentUrl(),"http://92.205.106.232/posts");
+        Assert.assertEquals(driver.getCurrentUrl(),"http://eurotech.study/posts");
 
         dashboardPage.developers_loc.click();
-        Assert.assertEquals(driver.getCurrentUrl(),"http://92.205.106.232/profiles");
+        Assert.assertEquals(driver.getCurrentUrl(),"http://eurotech.study/profiles");
 
     }
 
@@ -78,16 +78,16 @@ public class DashboardTest extends TestBase {
     @Test
     public void navigate2() {
 
-        driver.get(ConfigurationReader.get("urlIP"));
+        driver.get(ConfigurationReader.get("url"));
         loginPage.loginAsTeacher_Mtd();
         String expectedText="Welcome Teacher";
         Assert.assertEquals(dashboardPage.welcomeMessage_loc.getText(),expectedText,
                 "Verify that log in successfully");
 
         dashboardPage.navigateToMenu("Developers");
-        Assert.assertEquals(driver.getCurrentUrl(),"http://92.205.106.232/profiles");
+        Assert.assertEquals(driver.getCurrentUrl(),"http://eurotech.study/profiles");
         dashboardPage.navigateToMenu("All Posts");
-        Assert.assertEquals(driver.getCurrentUrl(),"http://92.205.106.232/posts");
+        Assert.assertEquals(driver.getCurrentUrl(),"http://eurotech.study/posts");
 
     }
 

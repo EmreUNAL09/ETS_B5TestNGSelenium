@@ -48,7 +48,7 @@ public class LoginPage extends BasePage {
 
         userNameInput_loc.sendKeys(userName);
         passwordInput_loc.sendKeys(password);
-        understandBtn_Loc.click();
+        understandBtn_Loc.click();   // bu BasePage'den extend yöntemi ile geldi!
         loginBtn_loc.click();
     }
 
@@ -119,6 +119,7 @@ public class LoginPage extends BasePage {
         passwordInput.sendKeys(password);
         loginBtn.click();
     }
+
 
     /*
     These are change with devEX website
