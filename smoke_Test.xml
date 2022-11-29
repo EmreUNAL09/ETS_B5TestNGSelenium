@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Eurotech Automation" verbose="1">
+    <test name="Eurotech smoke test">
+        <packages>
+            <package name="src.test.java.com.eurotech.test.day17_POM3"></package>
+            <package name="src.test.java.com.eurotech.test.day18_ExtentReports"></package>
+        </packages>
+        <classes>
+            <class name="com.eurotech.test.day13_WebTables.WebTable">
+                <methods>
+                    <exclude name="getRows"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
