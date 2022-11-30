@@ -14,7 +14,7 @@ import java.util.List;
 public class LoginPage extends BasePage {
 
 
-    @FindBy(id = "loginpage-input-email")
+    @FindBy(id = "user-name")  //user-name   loginpage-input-email
     public WebElement userNameInput_loc;
 
     @FindBy(name = "password")
@@ -98,6 +98,11 @@ public class LoginPage extends BasePage {
     public WebElement getPasswordInput;
 
 
+    //
+    public void productsText_Mtd(String ürünler){    /******/
+        productsText.getText();
+    }
+    //
 
 
     public void login(){

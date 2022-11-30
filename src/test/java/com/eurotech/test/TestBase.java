@@ -74,7 +74,7 @@ public class TestBase {
         wait = new WebDriverWait(Driver.get(),15);
 
 
-        driver.get(ConfigurationReader.get("url"));
+        driver.get(ConfigurationReader.get("url1"));
 
     }
 
